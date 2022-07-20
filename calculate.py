@@ -49,6 +49,7 @@ str_operands = ''
 MANY_OPERATION = 0
 str_operands =''.join(operands)
 str_operands.replace(" ", "")
+operation = ""
 
 for key in allowed_operations:
         if key in str_operands:
@@ -58,6 +59,8 @@ for key in allowed_operations:
 if MANY_OPERATION > 1:
     print ("Помилка: забагато операцій!")
     sys.exit()
-
-print (calc(operands[0], operands[1], operation))
+if operation != "":
+    print (calc(operands[0], operands[1], operation))
+else:
+    print ("Помилка: не знайдено операцію!")
 print ("\n*********************************")
